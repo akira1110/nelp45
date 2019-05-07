@@ -1,0 +1,17 @@
+<div class="sp_header">
+	<%= link_to "< 戻る", { :controller => :posts, :action => :index }, :class=>'no_deco' %>
+	<%= link_to "MENU", { :controller => :posts, :action => :menu }, :class=>'no_deco' %>
+</div>
+
+<div class="input_area">
+	<br/>
+	<%= form_for Post.new,:url => { :action => :create } do |f| %>
+		<%= f.text_field :title, placeholder: 'タイトル', size: "55" %><br/><br/>
+		<%= f.text_area :message, placeholder: '本文', size: '50x20' %><br/>
+		<%= f.hidden_field :user_id, value: @current_user.id %>
+		<%= f.hidden_field :name, value: @current_user.name %>
+		<%= f.hidden_field :board_id, value: 0 %>
+		<br/>
+		<%= f.submit "作成する", :class=>'btn-gradient-radius' %>
+	<% end %>
+</div>

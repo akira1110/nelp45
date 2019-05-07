@@ -1,0 +1,15 @@
+<div class="sp_header">
+	<%= link_to "< 戻る", login_path, :class=>'no_deco' %>
+	<p class="no_deco">新規会員登録</p>
+</div>
+
+<div style="text-align: center;">
+<%= form_for @user,:url => { :action => :create } do |f| %>
+	<br/>
+	<%= f.text_field :name, placeholder: 'ユーザ名', :size=>'50' %><br/><br/>
+	<%= f.text_field :mail, placeholder: 'メールアドレス', :size=>'50' %><br/><br/>
+	<%= f.text_field :password, placeholder: 'パスワード', :size=>'50' %><br/><br/>
+	<%= f.text_field :password_confirmation, placeholder: 'パスワード(確認)', :size=>'50' %><br/>
+	<%= f.submit "作成する", :class=>'btn-gradient-radius' %>
+<% end %>
+</div>

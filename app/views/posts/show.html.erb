@@ -1,0 +1,52 @@
+<div class="sp_header">
+	<%= link_to "< 戻る", { :controller => :posts, :action => :index }, :class=>'no_deco' %>
+	<%= link_to "MENU", { :controller => :posts, :action => :menu }, :class=>'no_deco' %>
+</div>
+
+
+<div class="show_area">
+	<div class="maru col1" style="">
+		 <div class="letter3"><%= @post.name %></div>
+	</div>
+	<div class="col2">
+		<ul>
+			<li class="poster">投稿者：<%= @post.name %></li>
+			<li class="title"><%= @post.title %></li>
+			<li class="detail"><%= @post.message %></li>
+			<li class="sub" style="margin-right:10px;"><%= distance_of_time_in_words_to_now(@post.created_at) %></li>
+		</ul>
+	</div>
+</div>
+
+<div class="line-bc">
+<% @posts.each do |pos| %>
+	<div class="balloon6">
+		<% if pos.user_id != @current_user.id then %>
+			<div class="faceicon maru">
+				<div class="letter3"><%= @post.name %></div>
+			</div>
+			<div class="chatting">
+				<div class="says">
+					<p><%= pos.message %></p>
+				</div>
+			</div>
+		<% else %>
+			<div class="mycomment">
+				<p><%= pos.message %></p>
+			</div>	
+		<% end %>
+	</div>
+	<div class="sub"><%= pos.user_id %> <%= distance_of_time_in_words_to_now(pos.created_at) %></div>
+<% end %>
+</div>
+
+<div style="position: fixed; bottom: 0; width: 100%; background-color: #81E2FF">
+<%= form_for Post.new,:url => { :action => :create }, :html => {:class => "help_form"} do |f| %>
+	<%= f.text_area :message, placeholder: '助ける', :class=>'submit_form' %>
+	<%= f.hidden_field :title, value: "res" %>
+	<%= f.hidden_field :user_id, value: @current_user.id %>
+	<%= f.hidden_field :name, value: @current_user.name %>
+	<%= f.hidden_field :board_id, value: @post.id %>
+	<%= f.submit "投稿" %>
+<% end %>
+</div>
