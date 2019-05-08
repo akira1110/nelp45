@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
-    @posts = Post.where(board_id: @post.id)
+    @posts = Post.where(board_id: @post.id).order(created_at: "DESC")
   end
 
   def new

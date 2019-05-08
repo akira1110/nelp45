@@ -1,6 +1,6 @@
 <div style="text-align:center; margin-top:200px;">
 
-	<h1 style="color: white; font-size: 48px;">NELP</h1>
+	<h1 style="color: white; font-size: 144px;">NELP</h1>
 
 		<%= form_for :session, url: login_path do |f| %>
 			<%= f.text_field :mail, placeholder: 'メールアドレス' %><br/>
@@ -9,5 +9,5 @@
 			<%= f.submit 'ログイン', :class=>"btn-gradient-radius" %>
 		<% end %>
 
-	<%= link_to "新規会員登録はこちら", users_new_path, :class=>'no_deco' %>
+	<%= link_to "新規会員登録はこちら", users_new_path, :class=>'no_deco', data: {"turbolinks" => false} %>
 </div>
