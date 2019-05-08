@@ -1,0 +1,57 @@
+@media screen and (min-width: 0px) and (max-width: 1800px) {
+  /* line 6, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  body {
+    margin: 0px;
+    background-color: white;
+  }
+
+  /* line 11, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  .sp_header {
+    background-color: #81E2FF;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  /* line 18, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  .no_deco {
+    color: white;
+    text-decoration: none;
+    font-size: 3em;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* line 26, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  input[type="text"] {
+    font-size: 2em;
+    margin: 10px 0px;
+    border: solid #888888;
+    padding: 10px 10px;
+  }
+
+  /* line 32, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  input[type="submit"] {
+    margin-top: 50px;
+    width: 450px;
+    height: 114px;
+    font-size: 2em;
+  }
+
+  /* line 39, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  .btn-gradient-radius {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 75px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+    margin-bottom: 3px;
+  }
+
+  /* line 50, /Volumes/USB64G/Rails/nelp/app/assets/stylesheets/users.scss */
+  .btn-gradient-radius:hover {
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+  }
+}
