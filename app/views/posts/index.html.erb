@@ -6,7 +6,9 @@
 <div class="show_area">
 	<% @posts.each do |post| %>
 		<div class="maru col1" style="">
-			 <div class="letter3"><%= post.name %></div>
+			<% if post.name.to_s.size != 0 then %>
+			 <div class="letter3"><%= post.name[0] %></div>
+			 <% end %>
 		</div>
 		<div class="col2">
 			<ul>

@@ -6,7 +6,7 @@
 
 <div class="show_area">
 	<div class="maru col1" style="">
-		 <div class="letter3"><%= @post.name %></div>
+		 <div class="letter3"><%= @post.name[0] %></div>
 	</div>
 	<div class="col2">
 		<ul>
@@ -23,7 +23,7 @@
 	<div class="balloon6">
 		<% if pos.user_id != @current_user.id then %>
 			<div class="faceicon maru">
-				<div class="letter3"><%= @post.name %></div>
+				<div class="letter3"><%= pos.name[0] %></div>
 			</div>
 			<div class="chatting">
 				<div class="says">
@@ -36,7 +36,7 @@
 			</div>	
 		<% end %>
 	</div>
-	<div class="sub"><%= pos.user_id %> <%= distance_of_time_in_words_to_now(pos.created_at) %></div>
+	<div class="sub">投稿者名：<%= pos.name %> <br/> <%= distance_of_time_in_words_to_now(pos.created_at) %></div>
 <% end %>
 </div>
 
