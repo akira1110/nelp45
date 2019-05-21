@@ -10,7 +10,7 @@
 	</div>
 	<div class="col2">
 		<ul>
-			<li class="poster">投稿者：<%= @post.name %></li>
+			<li class="poster">投稿者名：<%= @post.name %></li>
 			<li class="title"><%= @post.title %></li>
 			<li class="detail"><%= @post.message %></li>
 			<li class="sub" style="margin-right:10px;"><%= distance_of_time_in_words_to_now(@post.created_at) %></li>
