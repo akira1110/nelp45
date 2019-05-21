@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   skip_before_action :require_sign_in!, only: [:new, :create]
 
   def index
-    @posts = Post.where.not(title: "res")
+    @posts = Post.where.not(title: "res").order(created_at: "DESC")
   end
 
   def show
