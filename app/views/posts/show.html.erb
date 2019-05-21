@@ -12,7 +12,7 @@
 		<ul>
 			<li class="poster">投稿者：<%= @post.name %></li>
 			<li class="title"><%= @post.title %></li>
-			<li class="detail"><%= @post.message %></li>
+			<li class="detail"><%= simple_format(@post.message) %></li>
 			<li class="sub" style="margin-right:10px;"><%= distance_of_time_in_words_to_now(@post.created_at) %></li>
 		</ul>
 	</div>
@@ -27,12 +27,12 @@
 			</div>
 			<div class="chatting">
 				<div class="says">
-					<p><%= pos.message %></p>
+					<p><%= simple_format(pos.message) %></p>
 				</div>
 			</div>
 		<% else %>
 			<div class="mycomment">
-				<p><%= pos.message %></p>
+				<span><%= simple_format(pos.message) %></span>
 			</div>	
 		<% end %>
 	</div>
